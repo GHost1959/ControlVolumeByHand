@@ -2,8 +2,6 @@
 
 A Python application that uses hand tracking to control system volume through intuitive hand gestures.
 
-![Demo GIF](demo.gif) *(Consider adding an actual demo GIF showing the volume control in action)*
-
 ## Features ✨
 - Real-time hand tracking using MediaPipe
 - Pinch gesture detection between thumb and index finger
