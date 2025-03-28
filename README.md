@@ -1,47 +1,90 @@
-# Hand Gesture Volume Control 🖐️🔊
+# پروژه کنترل صدا با تشخیص دست 🤚🎚️
 
-A Python application that uses hand tracking to control system volume through intuitive hand gestures.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.5%2B-orange)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0.8%2B-red)
 
-## Features ✨
-- Real-time hand tracking using MediaPipe
-- Pinch gesture detection between thumb and index finger
-- Visual volume level indicator
-- Smooth volume adjustment
-- Cross-platform compatibility (Windows audio control via pycaw)
+## 📌 معرفی پروژه
+این پروژه یک سیستم هوشمند برای تشخیص حرکات دست و کنترل صدا در ویندوز است که با استفاده از:
+- **MediaPipe** برای تشخیص نقاط کلیدی دست
+- **OpenCV** برای پردازش تصویر
+- **pycaw** برای کنترل صدا در ویندوز
 
-## Technologies Used 🛠️
-- Python 3
-- OpenCV (for camera processing)
-- MediaPipe (for hand tracking)
-- pycaw (for Windows audio control)
-- NumPy (for value interpolation)
+## ✨ قابلیت‌های کلیدی
+- 👋 تشخیص لحظه‌ای دست در تصویر
+- ✌️ شناسایی موقعیت انگشتان
+- 🔊 کنترل صدا با حرکات دست
+- 📊 نمایشگر بصری میزان صدا
+- ⚡ عملکرد با سرعت بالا
 
-## Installation ⚙️
+## 📂 ساختار فایل‌ها
+```
+HandTrackingProject/
+├── HandTrackingModule.py  # ماژول اصلی تشخیص دست
+├── VolumeHandControl.py   # برنامه کنترل صدا
+└── README.md             # همین فایل راهنما
+```
 
-### Prerequisites
-- Python 3.7+
-- Windows OS (for audio control functionality)
+## 🛠️ راه‌اندازی
 
-## 📊 Performance Notes
-Typical FPS: 25-30 on modern laptops
+### پیش‌نیازها
+- پایتون 3.8 یا بالاتر
+- وبکم
 
-CPU Usage: ~15-20% on i5 processors
+### نصب کتابخانه‌های مورد نیاز
+```bash
+pip install opencv-python mediapipe numpy comtypes pycaw
+```
 
-Webcam Resolution: Optimized for 640x480
+## 🚀 نحوه اجرا
 
-## 👏 Credits & Attribution
-Hand Tracking Core: Murtaza Hassan
+### 1. ماژول تشخیص دست
+برای اجرای دموی تشخیص دست:
+```bash
+python HandTrackingModule.py
+```
 
-Volume Integration: Behrad Ghasemi
+### 2. برنامه کنترل صدا
+برای اجرای برنامه کنترل صدا:
+```bash
+python VolumeHandControl.py
+```
 
-Audio Control: pycaw Library
+## 🎮 روش کنترل صدا
+1. دست خود را مقابل وبکم قرار دهید
+2. با تغییر فاصله بین **انگشت شست** و **سبابه** صدا را تنظیم کنید:
+   - 👌 فاصله کم: صدا قطع
+   - 🖐️ فاصله زیاد: حداکثر صدا
+3. برای خروج کلید **'q'** را فشار دهید
 
-## 📜 License
-MIT License - Free for personal and commercial use
+## ⚙️ جزئیات فنی
 
-## 🌐 Connect
-For support and questions:
-Developer Site: https://cs50u.site
-email : justbehrad@gmail.com
+### HandTrackingModule.py
+- کلاس `handDetector` با متدهای:
+  - `findHands()`: تشخیص دست در تصویر
+  - `findPosition()`: دریافت مختصات نقاط دست
+  - `fingersUp()`: تشخیص انگشتان باز
+  - `findDistance()`: محاسبه فاصله بین نقاط
 
-Made with ❤️ and Python 🐍
+### VolumeHandControl.py
+- تبدیل فاصله انگشتان (50-300 پیکسل) به محدوده صدا
+- نمایش بصری شامل:
+  - درصد صدا
+  - نوار حجم صدا
+  - شمارنده FPS
+
+## 📝 نکات مهم
+- بهترین عملکرد در نور مناسب
+- بهینه‌شده برای تشخیص یک دست
+- کنترل صدا در ویندوز نیاز به دسترسی admin دارد
+
+## 🤝 مشارکت
+پیشنهادات و اصلاحات شما باعث بهبود پروژه می‌شود!
+
+## 📜 مجوز
+[MIT](https://choosealicense.com/licenses/mit/)
+
+---
+
+ساخته شده با ❤️ و پایتون  
+🔗 ارتباط با من: [GitHub](https://github.com/justbehrad) | [LinkedIn](https://linkedin.com/in/Behrad_ghasemi)
