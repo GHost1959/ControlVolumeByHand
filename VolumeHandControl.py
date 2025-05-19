@@ -52,6 +52,7 @@ def preprocess_image(img):
     return img
 
 # مقداردهی اولیه ولوم
+volPer = sync_volume()
 
 # حلقه اصلی
 while True:
